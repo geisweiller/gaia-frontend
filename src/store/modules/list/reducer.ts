@@ -10,8 +10,6 @@ const list: Reducer<CompanyListInterface> = (state = INITIAL_STATE, action) => {
   switch(action.type) {
     case 'COMPANY_LIST' : {
       const { companies } = action.payload;
-
-      console.log(companies);
       return {
         ...state,
         companiesArray:
