@@ -8,9 +8,13 @@ div.content {
   flex-direction: column;
   align-self: center;
 
-  button {
+  a {
     height: 4.375rem;
     width: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     color: #CCCCCC;
 
@@ -18,9 +22,10 @@ div.content {
     border-radius: 0.4rem;
 
     outline: none; 
+    text-decoration: none;
   }
 
-  button:hover {
+  a:hover {
     border: 0.1rem dashed #075E93;
     color: #075E93;
   }
