@@ -2,10 +2,10 @@
 import { useState, useEffect } from 'react';
 import './index.scss';
 import { useDispatch } from 'react-redux';
-import { CompanyData } from '../../../store/modules/list/types';
+import { CompanyData } from '../../store/modules/list/types';
 
-import { companyList } from '../../../store/modules/list/actions';
-import api from '../../../services/api';
+import { companyList } from '../../store/modules/list/actions';
+import api from '../../services/api';
 
 
 
@@ -33,7 +33,7 @@ export default function Search() {
   dispatch(companyList(filteredList));
   
   
-  }, [search,data])
+  }, [search,data]);
 
   return (
 

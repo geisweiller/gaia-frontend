@@ -1,10 +1,12 @@
 import { BrowserRouter, Route } from 'react-router-dom';
-import Content from './components/Content';
-import Company from './components/Content/Company';
+import Content from './pages/CompanyList';
+import Company from './pages/Company';
+import CreateCompany from './pages/CreateCompany';
 
 const Routes = () => (
   <BrowserRouter>
-      <Route path ='/newcompany' component={Company}/> 
+      <Route path ='/createcompany' component={CreateCompany}/> 
+      <Route path ='/company/:id' component={Company}/> 
       <Route exact path ='/' component={Content}/>
   </BrowserRouter>
 )

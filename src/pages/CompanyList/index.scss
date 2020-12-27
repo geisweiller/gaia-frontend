@@ -1,17 +1,20 @@
 div.content {
-  margin-top: 6rem;
 
-  height: 100%;
+  padding: 3rem 1rem 1rem;
+
+
   width: 95%;
 
   display: flex;
   flex-direction: column;
-  align-self: center;
+ 
 
-  a {
-    height: 4.375rem;
+  a.add {
     width: 100%;
-    
+    padding: 1.4rem;
+
+    margin-bottom: 1rem;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,16 +28,16 @@ div.content {
     text-decoration: none;
   }
 
-  a:hover {
+  a.add:hover {
     border: 0.1rem dashed #075E93;
     color: #075E93;
   }
 
-  div:hover {
+  a.company:hover {
     box-shadow: 0.1rem 0.1rem 0.1rem #075E93;  
   }
 
-  div {
+  a.company {
     height: 4.375rem;
     width: 100%;
 
@@ -42,13 +45,15 @@ div.content {
     flex-direction: column;
     justify-content: center;
 
-    margin-top: 1rem;
+    margin-bottom: 1rem;
 
     padding: 1rem;
 
     background: #FFF;
     border-radius: 0.4rem;
     box-shadow: 0.1rem 0.1rem 0 #CCCCCC;
+
+    text-decoration: none;
     
     span {
 

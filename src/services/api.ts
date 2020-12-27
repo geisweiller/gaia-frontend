@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://homolog.grupogaia.com.br/prova/front/api/clients'
+  baseURL: 'http://localhost:3000/company'
 });
 
 export default api;
