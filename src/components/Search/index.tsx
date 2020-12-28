@@ -33,7 +33,7 @@ export default function Search() {
   dispatch(companyList(filteredList));
   
   
-  }, [search,data]);
+  }, []);
 
   return (
 

@@ -7,7 +7,9 @@ import theme from '../../assets/svg/icon/theme.svg';
 export default function Header() {
   return (
     <div className='wrapper'>
+      <a href='/'>
         <img src={logo} alt='Grupo Gaia'></img>
+      </a>
       <div className='menu'>
         <p>Nome do usuário</p>
         <a href='/'>
