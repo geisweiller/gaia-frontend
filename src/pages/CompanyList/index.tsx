@@ -1,32 +1,56 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import './index.scss';
 import Search from '../../components/Search/index';
 import Loading from '../../components/Loading/index';
 import { useSelector } from 'react-redux';
-import { CompanyData } from '../../store/modules/list/types';
+import { SearchInterface } from '../../store/modules/search/types';
 import { State } from '../../store';
 import { Link } from 'react-router-dom';
 import api from '../../services/api';
 
 
+interface CompanyData {
+  id: string,
+  name: string,
+  cnpj: number,
+  email: string,
+}
+
 
 export default function Content() {
   const [data,setData] = useState<CompanyData[]>([]);
   const [loading, setLoading] = useState(true);
+  const { search } = useSelector<State, SearchInterface>(state => state.search);
 
+
+  const searchCompany = () => {
+    api.get(`?text=${search}`).then(response => {
+      
+      const res = response.data;
+      setLoading(false); 
+      setData(res);
+    }).catch(error =>{
+      console.log(error);
+    })
+  }
 
 
   useEffect(() => {
 
-    api.get('').then(response =>{
-      const res= response.data;
-      setData(res);
-      setLoading(false);
-    }).catch(error => {
-      console.log(error);
-    })
-      
-    }, [])
+    if(search) {
+      searchCompany();
+    } else {
+      api.get('').then(response =>{
+        const res= response.data;
+        setData(res);
+        setLoading(false);
+      }).catch(error => {
+        console.log(error);
+      })
+    }
+  
+    }, [search])
 
 
 

@@ -27,5 +27,14 @@ input.search {
   
   ::placeholder {
     color: #CCCCCC;
+  } 
+}
+
+form.search {
+  display: flex;
+  align-self: center;
+
+  @media(min-width:768px) {
+    align-self: flex-end;
   }
 }

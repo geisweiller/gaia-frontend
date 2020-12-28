@@ -17,8 +17,6 @@ export default function CreateCompany() {
       'Accept': 'application/json',
       'Content-Type': 'application/json' 
     }
-
-
     api.post('', {
       id: `${Math.random().toString(16).substr(2, 8)}-${Math.random().toString(16).substr(2,4)}-${Math.random().toString(16).substr(2,4)}-${Math.random().toString(16).substr(2,4)}-${Math.random().toString(16).substr(2,12)}`,
       name,
@@ -41,8 +39,6 @@ export default function CreateCompany() {
     
   
   }
-
-
 
   return (
     <div className="modal-background">

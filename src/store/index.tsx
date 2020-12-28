@@ -1,10 +1,10 @@
 import { createStore } from 'redux';
-import { CompanyListInterface } from './modules/list/types';
+import { SearchInterface } from './modules/search/types';
 import rootReducer from './modules/rootReducer';
 
 
 export interface State {
-  list: CompanyListInterface
+  search: SearchInterface
 }
 
 const store = createStore(rootReducer);
