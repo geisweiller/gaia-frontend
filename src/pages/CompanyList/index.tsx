@@ -13,7 +13,7 @@ import api from '../../services/api';
 export default function Content() {
   const [data,setData] = useState<CompanyData[]>([]);
   const [loading, setLoading] = useState(true);
-  const list = useSelector<State, CompanyData[]>(state => state.list.companiesArray);
+
 
 
   useEffect(() => {
@@ -22,6 +22,8 @@ export default function Content() {
       const res= response.data;
       setData(res);
       setLoading(false);
+    }).catch(error => {
+      console.log(error);
     })
       
     }, [])
@@ -40,7 +42,7 @@ export default function Content() {
         ) : (
           data.map((item) =>{
             return (
-              <Link className='company' to={`company/${item.id}`} key={item.id}>
+              <Link className='company' to={`company/${item.name}`} key={item.id}>
                 <h3>{item.name}</h3>
                 <span>
                   <p> CNPJ: {item.cnpj} |</p>

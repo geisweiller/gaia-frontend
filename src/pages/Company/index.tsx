@@ -7,6 +7,7 @@ import { useHistory } from "react-router-dom";
 
 interface CompanyParams {
   id: string;
+  name: string;
 }
 
 
@@ -17,23 +18,36 @@ export default function Company() {
   const [name, setName] = useState('');
   const [cnpj, setCnpj] = useState('');
   const [email, setEmail] = useState('');
+  const [id, setId] = useState('');
+  const headers = {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json' 
+  }
 
   const updateCompany = () => {
-    api.put(`/${params.id}`, {
-      id: params.id,
+    api.put(`?text=${params.name}`, {
+      id,
       name,
       cnpj,
       email,
+    } , {
+      headers
     }).then(response => {
       alert('Empresa atualizada com sucesso!');
       history.push('/');
+    }).catch(error => {
+      console.log(error);
     })
   };
 
   const deleteCompany = () => {
-    api.delete(`/${params.id}`).then(response => {
+    api.delete(`?text=${params.name}`, {
+      headers
+    }).then(response => {
       alert('Empresa excluída com sucesso!');
       history.push('/');
+    }).catch(error =>{
+      console.log(error);
     })
   }
 
@@ -45,14 +59,19 @@ export default function Company() {
   };
 
   useEffect(() => {
-    api.get(`/${params.id}`).then(response => {
+    api.get(`?text=${params.name}`).then(response => {
+      
+      const res = response.data;
 
-      setName(response.data.name);
-      setCnpj(response.data.cnpj);
-      setEmail(response.data.email);
-
+      setName(res[0].name);
+      setCnpj(res[0].cnpj);
+      setEmail(res[0].email);
+      setId(res[0].id);
+    }).catch(error =>{
+      console.log(error);
     })
-  }, [params.id]);
+
+  }, [params.name]);
 
 
   return (

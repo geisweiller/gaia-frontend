@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:3000/company'
+  baseURL: 'https://cors-anywhere.herokuapp.com/http://homolog.grupogaia.com.br/prova/front/api/clients'
 });
 
 export default api;

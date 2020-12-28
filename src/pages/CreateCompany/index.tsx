@@ -13,12 +13,20 @@ export default function CreateCompany() {
 
 
   const newCompany = () => {
+    const headers = {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json' 
+    }
+
+
     api.post('', {
       id: `${Math.random().toString(16).substr(2, 8)}-${Math.random().toString(16).substr(2,4)}-${Math.random().toString(16).substr(2,4)}-${Math.random().toString(16).substr(2,4)}-${Math.random().toString(16).substr(2,12)}`,
       name,
       cnpj,
       email,
-    }).then(response => {
+    }, {
+      headers
+    } ).then(response => {
       alert('Empresa criada com sucesso!');
       history.push('/');
     })
