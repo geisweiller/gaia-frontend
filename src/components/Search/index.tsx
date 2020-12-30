@@ -15,12 +15,11 @@ export default function Search() {
     event.preventDefault();
     
     dispatch(searchResult(search));
-  
   }
 
   return (
-      <form className='search' onSubmit={handleSubmit}>
-        <input className='search' placeholder='Buscar Empresa' onChange={event => setSearch(event.target.value)}/>
+      <form className='search' onKeyUp={handleSubmit} onSubmit={handleSubmit}>
+        <input className='search' placeholder='Buscar Empresa' value={search} onChange={event => setSearch(event.target.value)}/>
       </form>
 
   )

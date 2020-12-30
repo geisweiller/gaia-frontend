@@ -1,5 +1,11 @@
 img.loading {
   height: 10%;
+  width: 30%;
+  
+  display: flex;
+  align-self: center;
+
+
   animation: rotation 2s infinite linear;
 
   margin-top: 10rem;

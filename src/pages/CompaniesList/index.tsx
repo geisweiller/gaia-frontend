@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import './index.scss';
 import Search from '../../components/Search/index';
 import Loading from '../../components/Loading/index';
+import NotFound from '../../components/NotFound/index';
 import { useSelector } from 'react-redux';
 import { SearchInterface } from '../../store/modules/search/types';
 import { State } from '../../store';
@@ -18,7 +19,7 @@ interface CompanyData {
 }
 
 
-export default function Content() {
+export default function CompaniesList() {
   const [data,setData] = useState<CompanyData[]>([]);
   const [loading, setLoading] = useState(true);
   const { search } = useSelector<State, SearchInterface>(state => state.search);
@@ -49,7 +50,6 @@ export default function Content() {
         console.log(error);
       })
     }
-  
     }, [search])
 
 
@@ -63,7 +63,7 @@ export default function Content() {
         <Link to='/createcompany' className='add'>+ Adicionar empresa</Link>
         {loading ? (
           <Loading/>
-        ) : (
+        ) : data.length === 0 ? <NotFound/>  : (
           data.map((item) =>{
             return (
               <Link className='company' to={`company/${item.name}`} key={item.id}>
