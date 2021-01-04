@@ -25,10 +25,21 @@ export default function CompaniesList() {
   const [loading, setLoading] = useState(true);
   const { search } = useSelector<State, SearchInterface>(state => state.search);
 
+  const getData = async () => {
+      await api.get('').then(response =>{
+        const res= response.data;
+        setData(res);
+        setLoading(false);
+      }).catch(error => {
+        console.log(error);
+      })
+    
+  }
 
 
-  const searchCompany = () => {
-    api.get(`?text=${search}`).then(response => {
+
+  const searchCompany = async () => {
+    await api.get(`?text=${search}`).then(response => {
       
       const res = response.data;
       setLoading(false); 
@@ -40,18 +51,12 @@ export default function CompaniesList() {
 
 
   useEffect(() => {
-
     if(search) {
       searchCompany();
     } else {
-      api.get('').then(response =>{
-        const res= response.data;
-        setData(res);
-        setLoading(false);
-      }).catch(error => {
-        console.log(error);
-      })
+     getData()
     }
+ 
     }, [search,data])
 
 

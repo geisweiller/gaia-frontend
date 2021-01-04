@@ -25,8 +25,8 @@ export default function Company() {
     'Content-Type': 'application/json' 
   }
 
-  const updateCompany = () => {
-    api.put(`?text=${params.name}`, {
+  const updateCompany = async () => {
+    await api.put(`?text=${params.name}`, {
       id,
       name,
       cnpj,
@@ -41,8 +41,8 @@ export default function Company() {
     })
   };
 
-  const deleteCompany = () => {
-    api.delete(`?text=${params.name}`, {
+  const deleteCompany = async () => {
+    await api.delete(`?text=${params.name}`, {
       headers
     }).then(response => {
       alert('Empresa excluída com sucesso!');
@@ -59,8 +59,8 @@ export default function Company() {
     
   };
 
-  useEffect(() => {
-    api.get(`?text=${params.name}`).then(response => {
+  const getData = async () => {
+    await api.get(`?text=${params.name}`).then(response => {
       
       const res = response.data;
 
@@ -71,6 +71,11 @@ export default function Company() {
     }).catch(error =>{
       console.log(error);
     })
+  
+}
+
+  useEffect(() => {
+    getData();
 
   }, [params.name]);
 
