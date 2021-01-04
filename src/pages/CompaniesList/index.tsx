@@ -37,9 +37,8 @@ export default function CompaniesList() {
   }
 
 
-
   const searchCompany = async () => {
-    await api.get(`?text=${search}`).then(response => {
+     await api.get(`?text=${search}`).then(response => {
       
       const res = response.data;
       setLoading(false); 
@@ -57,7 +56,7 @@ export default function CompaniesList() {
      getData()
     }
  
-    }, [search,data])
+    }, [search])
 
 
 
