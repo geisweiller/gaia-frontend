@@ -60,7 +60,7 @@ export default function Company() {
   };
 
   const getData = async () => {
-    await api.get(`?text=${params.name}`).then(response => {
+    await api.get(`/${id}`).then(response => {
       
       const res = response.data;
 
@@ -77,7 +77,7 @@ export default function Company() {
   useEffect(() => {
     getData();
 
-  }, [params.name]);
+  }, [params.id]);
 
 
   return (

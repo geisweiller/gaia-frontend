@@ -56,7 +56,7 @@ export default function CompaniesList() {
      getData()
     }
  
-    }, [search])
+    }, [search, data])
 
 
 
@@ -72,7 +72,7 @@ export default function CompaniesList() {
         ) : data.length === 0 ? <NotFound/>  : (
           data.map((item) =>{
             return (
-              <Link className='company' to={`company/${item.name}`} key={item.id}>
+              <Link className='company' to={`company/${item.id}`} key={item.id}>
                 <h3>{item.name}</h3>
                 <span>
                   <p> CNPJ: {item.cnpj} |</p>
