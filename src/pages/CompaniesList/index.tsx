@@ -52,7 +52,7 @@ export default function CompaniesList() {
         console.log(error);
       })
     }
-    }, [search])
+    }, [search,data])
 
 
 
