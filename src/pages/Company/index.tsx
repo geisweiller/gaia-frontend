@@ -26,8 +26,8 @@ export default function Company() {
   }
 
   const updateCompany = async () => {
-    await api.put(`?text=${params.name}`, {
-      id,
+    await api.put(`/${id}`, {
+      id : null,
       name,
       cnpj,
       email,
@@ -42,7 +42,7 @@ export default function Company() {
   };
 
   const deleteCompany = async () => {
-    await api.delete(`?text=${params.name}`, {
+    await api.delete(`/${id}`, {
       headers
     }).then(response => {
       alert('Empresa excluída com sucesso!');
