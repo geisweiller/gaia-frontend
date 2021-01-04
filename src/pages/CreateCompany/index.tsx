@@ -12,12 +12,12 @@ export default function CreateCompany() {
   const history = useHistory();
 
 
-  const newCompany = () => {
+  const newCompany = async () => {
     const headers = {
       'Accept': 'application/json',
       'Content-Type': 'application/json' 
     }
-    api.post('', {
+    await api.post('', {
       id: `${Math.random().toString(16).substr(2, 8)}-${Math.random().toString(16).substr(2,4)}-${Math.random().toString(16).substr(2,4)}-${Math.random().toString(16).substr(2,4)}-${Math.random().toString(16).substr(2,12)}`,
       name,
       cnpj,

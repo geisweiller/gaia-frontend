@@ -56,7 +56,7 @@ export default function CompaniesList() {
      getData();
     }
  
-    }, [search])
+    }, [search, data])
 
 
 
