@@ -79,7 +79,7 @@ export default function Company() {
     <div className="modal-background">
       <form className="modal" onSubmit={handleSubmit}>
         <div className='title'>
-            <h2>{name}</h2>
+            <h2>Empresa</h2>
             <Link to='/'><CloseOutlined style={{color: '#000'}}/></Link>
           </div>
         <hr/>
