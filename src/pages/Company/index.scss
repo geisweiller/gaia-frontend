@@ -1,4 +1,7 @@
 .modal-background {
+  position: fixed;
+  left: 0;
+  top: 0;
   height: 100vh;
   width: 100%;
   
@@ -7,7 +10,8 @@
   align-items: center;
   justify-content: center;
 
-  background-color: #00000099;
+  background-color:#00000099;
+  
   
 
   .modal {
@@ -28,8 +32,16 @@
     }
 
     hr {
-      margin: 1rem;
-      color: #CCCCCC;
+      margin: 0 1rem;
+      border-top: 0.05rem solid #CCCBCB;
+    }
+
+    div.title{
+      display: flex; 
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 0 1rem;
     }
 
     div.buttons{
@@ -38,17 +50,22 @@
       align-items: center;
       justify-content: space-between;
       
+      padding: 0 0.5rem;
+      margin: 1rem 0 0 0;
 
       button, a {
         padding: 0.5rem;
         width: 5rem;
+
 
         margin: 0 0.5rem 1rem;
         border-radius: 0.4rem;
         border: none;
 
         outline: none;
+        text-align: center;
         text-decoration: none;
+        font-size: 0.75rem;
 
       }
 

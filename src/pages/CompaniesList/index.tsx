@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 import api from '../../services/api';
 
 
+
 interface CompanyData {
   id: string,
   name: string,
@@ -23,6 +24,7 @@ export default function CompaniesList() {
   const [data,setData] = useState<CompanyData[]>([]);
   const [loading, setLoading] = useState(true);
   const { search } = useSelector<State, SearchInterface>(state => state.search);
+
 
 
   const searchCompany = () => {
@@ -58,7 +60,7 @@ export default function CompaniesList() {
     <>
 
         <div className='content'> 
-            
+        
         <Search/>
         <Link to='/createcompany' className='add'>+ Adicionar empresa</Link>
         {loading ? (
@@ -76,6 +78,7 @@ export default function CompaniesList() {
             )
           })
         )}    
+
         </div>
 
   </>

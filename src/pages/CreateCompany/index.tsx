@@ -1,9 +1,9 @@
 import { FormEvent, useState } from 'react';
-import './index.scss';
+import '../Company/index.scss';
 import { Link } from 'react-router-dom';
 import api from '../../services/api';
 import { useHistory } from "react-router-dom";
-
+import { CloseOutlined } from '@ant-design/icons';
 
 export default function CreateCompany() {
   const [name, setName] = useState('');
@@ -43,7 +43,10 @@ export default function CreateCompany() {
   return (
     <div className="modal-background">
       <form className="modal" onSubmit={handleSubmit}>
-        <h2>Empresa</h2>
+        <div className='title'>
+          <h2>Criar Empresa</h2>
+          <Link to='/'><CloseOutlined style={{color: '#000'}}/></Link>
+        </div>
         <hr/>
         <div className='label'>
           <label>Nome</label>

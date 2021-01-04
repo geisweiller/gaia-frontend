@@ -3,24 +3,25 @@ import logo from '../../assets/svg/logo/logo.svg';
 import avatar from '../../assets/svg/icon/avatar.svg';
 import config from '../../assets/svg/icon/config.svg';
 import theme from '../../assets/svg/icon/theme.svg';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   return (
     <div className='wrapper'>
-      <a href='/'>
+      <Link to='/'>
         <img src={logo} alt='Grupo Gaia'></img>
-      </a>
+      </Link>
       <div className='menu'>
         <p>Nome do usuário</p>
-        <a href='/'>
+        <Link to='/'>
           <img src={avatar} alt='Avatar'></img>
-        </a>
-        <a href='/'style={{background: '#4D9AD4'}}>
+        </Link>
+        <Link to='/'style={{background: '#4D9AD4'}}>
           <img src={config} alt='Config' ></img>
-        </a>
-        <a  href='/'>
+        </Link>
+        <Link  to='/'>
           <img src={theme} alt='Theme'></img>
-        </a>
+        </Link>
       </div>
     </div>
   )
