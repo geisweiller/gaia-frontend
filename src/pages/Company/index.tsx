@@ -36,6 +36,7 @@ export default function Company() {
     }).then(response => {
       alert('Empresa atualizada com sucesso!');
       history.push('/');
+      window.location.reload();
     }).catch(error => {
       console.log(error);
     })
@@ -47,6 +48,7 @@ export default function Company() {
     }).then(response => {
       alert('Empresa excluída com sucesso!');
       history.push('/');
+      window.location.reload();
     }).catch(error =>{
       console.log(error);
     })
