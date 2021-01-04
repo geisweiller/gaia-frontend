@@ -32,9 +32,9 @@ yarn start
  
 ###  Observação:
 
-Por conta da política do CORS foi preciso utilizar uma extensão do Chrome para poder puxar os dados da API. Além disso foi preciso acrescentar 'https://cors-anywhere.herokuapp.com/' antes do endereço da API em '/services/api.ts' para poder utilizar o método POST.
+Por conta da política do CORS foi preciso utilizar uma extensão do Chrome para poder puxar os dados da API. Além disso foi preciso acrescentar 'https://cors-anywhere.herokuapp.com/' antes do endereço da API em '/services/api.ts' para poder utilizar os métodos POST, PUT e DELETE.
 
-Aparentemente a API em questão não suporta o método PUT e o método DELETE, impossibilitando realizar edição e exclusão das empresas cadastradas. Porém, as funções foram testadas em ambiente local com uma fake API.
+
 
 
 

@@ -53,7 +53,7 @@ export default function CompaniesList() {
     if(search) {
       searchCompany();
     } else {
-     getData()
+     getData();
     }
  
     }, [search, data])
